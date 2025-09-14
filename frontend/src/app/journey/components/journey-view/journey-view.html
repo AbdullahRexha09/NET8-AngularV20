@@ -1,0 +1,37 @@
+<div class="table-container">
+  <span>
+    <h2>Journey Data Table</h2>
+    <button class="gradient-btn" [routerLink]="['/journey', '-1']">Create</button>
+  </span>
+    <div class="table-wrapper">
+      <table class="journey-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Stops</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          @if (journeys().length > 0) {
+           @for (journey of journeys(); track journey.id) {
+             <tr>
+               <td>{{ journey.title }}</td>
+               <td>{{ journey.description }}</td>
+               <td>{{ journey.stops }}</td>
+               <td><button class="gradient-btn" [routerLink]="['/journey', journey.id]">Edit</button></td>
+               <td><button class="gradient-btn" (click)="onDelete(`${journey.id}`)">Delete</button></td>
+             </tr>
+           }
+         } @else {
+           <tr>
+             <td colspan="2">No journeys found</td>
+           </tr>
+         }
+        </tbody>
+      </table>
+    </div>
+
+</div>

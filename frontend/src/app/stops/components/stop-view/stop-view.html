@@ -1,0 +1,41 @@
+<div class="table-container">
+  <span>
+    <h2>Stops Data Table</h2>
+    <button class="gradient-btn" [routerLink]="['/stop', '-1']">Create</button>
+  </span>
+    <div class="table-wrapper">
+      <table class="journey-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Description</th>
+            <th>X</th>
+            <th>Y</th>
+            <th>CreatedAt</th>
+          </tr>
+        </thead>
+        <tbody>
+          @if (stops().length > 0) {
+           @for (journey of stops(); track journey.id) {
+             <tr>
+               <td>{{ journey.name }}</td>
+               <td>{{ journey.code }}</td>
+               <td>{{ journey.description }}</td>
+               <td>{{ journey.x }}</td>
+               <td>{{ journey.y }}</td>
+               <td>{{ journey.createdAt | date: 'dd/MM/yyyy' }}</td>
+               <td><button class="gradient-btn" [routerLink]="['/stop', journey.id]">Edit</button></td>
+               <td><button class="gradient-btn" (click)="onDelete(`${journey.id}`)">Delete</button></td>
+             </tr>
+           }
+         } @else {
+           <tr>
+             <td colspan="2">No Stops found</td>
+           </tr>
+         }
+        </tbody>
+      </table>
+    </div>
+
+</div>

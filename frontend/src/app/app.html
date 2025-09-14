@@ -1,0 +1,27 @@
+<div class="container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">🚀</span>
+                <span>Travel Explorer</span>
+            </div>
+        </header>
+        
+        <nav class="nav-container">
+            <h2 class="gradient-heading-link">
+                <a [routerLink]="['/journey']">
+                    <span class="icon">🧳</span>
+                    Journeys
+                </a>
+            </h2>
+            <h2 class="gradient-heading-link">
+                <a [routerLink]="['/stop']">
+                    <span class="icon">📍</span>
+                    Stops
+                </a>
+            </h2>
+        </nav>
+</div>
+
+
+
+<router-outlet></router-outlet>

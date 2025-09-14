@@ -1,0 +1,29 @@
+  <form name="myForm" ng-submit="submitForm()" novalidate>
+            <div class="form-group">
+                <label for="title">Name:</label>
+                <input type="text" id="title" name="title" [(ngModel)]="formData.name" required placeholder="Enter a title">
+            </div>
+            
+            <div class="form-group">
+                <label for="code">Code:</label>
+                <input type="text" id="code" name="code" [(ngModel)]="formData.code" required placeholder="Enter a code">
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description"  [(ngModel)]="formData.description" required placeholder="Enter a description"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="stopCodes">X</label>
+                <input type="text" id="stopCodes" name="stopCodes" [(ngModel)]="formData.x" required placeholder="Coordinate X">
+            </div>
+
+            <div class="form-group">
+                <label for="stopCodes">X</label>
+                <input type="text" id="stopCodes" name="stopCodes" [(ngModel)]="formData.y" required placeholder="Coordinate Y">
+            </div>
+            
+            <button type="submit" (click)="submitForm()">Submit</button>
+        </form>
+    
